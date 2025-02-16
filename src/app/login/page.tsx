@@ -106,7 +106,7 @@ const LoginPage = () => {
                         </button>
                         <button 
                         onClick={() => signIn("github",{
-                            callbackUrl: "http://localhost:3000"
+                            callbackUrl: "http://localhost:3000/dashboard"
                         })}
                         className="flex items-center justify-center w-12 h-12 bg-gray-100 rounded-full shadow-md hover:bg-gray-200"
                         >
