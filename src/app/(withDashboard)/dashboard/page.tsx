@@ -11,14 +11,18 @@ const DashboardPage = async () => {
     return (
         <div>
             <h1 className="text-4xl text-center mt-10">Welcome To Dashboard Page</h1>
-            <h3>{session?.user?.name}</h3>
-            <Image
-                src={session?.user?.image as string}
-                width={100}
-                height={100}
-                alt="user image"
-            />
-            <p>{session?.user?.email}</p>
+            {
+                session?.user && <>
+                    <h3>{session?.user?.name}</h3>
+                    <Image
+                        src={session?.user?.image as string}
+                        width={100}
+                        height={100}
+                        alt="user image"
+                    />
+                    <p>{session?.user?.email}</p>
+                </>
+            }
         </div>
     );
 };

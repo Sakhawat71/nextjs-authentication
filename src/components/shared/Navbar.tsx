@@ -1,3 +1,5 @@
+"use client"
+import { signOut } from "next-auth/react";
 import Link from "next/link";
 
 export type UserProps = {
@@ -79,7 +81,9 @@ const Navbar = ({ session }: { session: UserProps }) => {
             <div className="flex items-center">
                 {
                     session?.user ?
-                        <button className="border border-red-500 text-red-500 px-5 py-2 rounded-full hover:bg-red-500 hover:text-black transition duration-200">
+                        <button 
+                        onClick={()=> signOut()}
+                        className="border border-red-500 text-red-500 px-5 py-2 rounded-full hover:bg-red-500 hover:text-black transition duration-200">
                             Logout
                         </button>
                         :
